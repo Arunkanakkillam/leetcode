@@ -2,7 +2,7 @@ QN no:217
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 Ans:
-<!-- /**
+/**
  * @param {number[]} nums
  * @return {boolean}
  */
@@ -12,7 +12,7 @@ var containsDuplicate = function(nums) {
     return false
    }
    return true
-    } -->
+    }
 
 
 
@@ -24,10 +24,9 @@ You must implement a solution with a linear runtime complexity and use only cons
 
 Ans:
 
-<!-- /**
+
  * @param {number[]} nums
  * @return {number}
- */
 var singleNumber = function(nums) {
    for(let i=0;i<nums.length;i++){
         let flag=0
@@ -42,4 +41,4 @@ var singleNumber = function(nums) {
         }
     }
 
-}; -->
+};
