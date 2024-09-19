@@ -42,3 +42,26 @@ var singleNumber = function(nums) {
     }
 
 };
+
+
+
+Qn no:41
+Given an unsorted integer array nums. Return the smallest positive integer that is not present in nums.
+
+You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.
+
+
+
+Ans:
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var firstMissingPositive = function(nums) {
+    const a=new Set(nums)
+    for(let i=1;i<=nums.length+1;i++){
+        if(!a.has(i)){
+            return i
+        }
+    }
+};
