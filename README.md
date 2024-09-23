@@ -121,3 +121,32 @@ var createCounter = function(init) {
    
     }
 };
+
+
+Qn no:3194
+
+You have an array of floating point numbers averages which is initially empty. You are given an array nums of n integers where n is even.
+
+You repeat the following procedure n / 2 times:
+
+    Remove the smallest element, minElement, and the largest element maxElement, from nums.
+    Add (minElement + maxElement) / 2 to averages.
+
+Return the minimum element in averages.
+
+
+Ans:
+var minimumAverage = function(nums) {
+    let b=[]
+   if(nums.length>=nums.length/2){
+        nums.sort((a,b)=>a-b);
+        
+        while (nums.length>1) {
+            let a = (nums[0] + nums[nums.length - 1])/2
+            nums.shift();  
+            nums.pop();  
+            b.push(a);  
+        }
+    }
+    return b.sort((a,b)=>a-b)[0]
+};
