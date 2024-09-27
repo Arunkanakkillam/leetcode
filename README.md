@@ -170,3 +170,40 @@ var distributeCandies = function(candyType) {
         return candyType.length/2
     }
 };
+
+Qn no:500
+Given an array of strings words, return the words that can be typed using letters of the alphabet on only one row of American keyboard like the image below.
+
+In the American keyboard:
+
+    the first row consists of the characters "qwertyuiop",
+    the second row consists of the characters "asdfghjkl", and
+    the third row consists of the characters "zxcvbnm".
+
+Ans:
+var findWords = function(words) {
+    let a=[]
+    for(i=0;i<words.length;i++){
+        let flag1=false
+        let flag2=false
+        let flag3=false
+
+        for(x of words[i]){
+            if('qwertyuiop'.includes(x.toLowerCase())){
+                flag1=true
+            }
+            else if('asdfghjkl'.includes(x.toLowerCase())){
+                flag2=true
+            }
+            else if('zxcvbnm'.includes(x.toLowerCase())){
+                flag3=true
+            }
+        }
+        if(!(flag1&&flag2||flag1&&flag3||flag3&&flag2)){
+
+                a.push(words[i])
+        }
+     
+    }
+    return a
+};
