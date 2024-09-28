@@ -207,3 +207,22 @@ var findWords = function(words) {
     }
     return a
 };
+
+Qn no: 7. Reverse Integer
+Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+
+Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+
+Ans:
+var reverse = function(x) {
+    let b=2147483648;
+    let a=x.toString().split('')
+     if(a[0]=='-'){
+        a.splice(0,1)
+        let reversed = -(Number(a.reverse().join('')))
+        return (reversed < -b || reversed >= b) ? 0 : reversed
+     }
+    
+         let reversed = Number(a.reverse().join(''));
+      return (reversed < -b || reversed >= b) ? 0 : reversed
+};
