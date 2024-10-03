@@ -274,3 +274,23 @@ var expect = function(val) {
     }
   }
 };
+
+Qn no: 1662. Check If Two String Arrays are Equivalent
+
+Given two string arrays word1 and word2, return true if the two arrays represent the same string, and false otherwise.
+
+A string is represented by an array if the array elements concatenated in order forms the string.
+
+Ans:
+var arrayStringsAreEqual = function(word1, word2) {
+    let a
+    let b
+  for( i=0;i<word1.length;i++){
+    a+=word1[i]
+  }
+  for( i=0;i<word2.length;i++){
+    b+=word2[i]
+  }
+  if(a==b){return true }
+    return false
+};
