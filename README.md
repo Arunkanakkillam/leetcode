@@ -294,3 +294,22 @@ var arrayStringsAreEqual = function(word1, word2) {
   if(a==b){return true }
     return false
 };
+
+Qn no: 2000. Reverse Prefix of Word
+Given a 0-indexed string word and a character ch, reverse the segment of word that starts at index 0 and ends at the index of the first occurrence of ch (inclusive). If the character ch does not exist in word, do nothing.
+
+    For example, if word = "abcdefd" and ch = "d", then you should reverse the segment that starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
+
+Return the resulting string.
+Ans:
+var reversePrefix = function(word, ch) {
+   x= word.split("")
+   c=''
+   for(i=0;i<x.length;i++){
+       c+=x[i]
+       if(x[i]==ch){
+                   return c.split("").reverse().join("")+word.slice(i+1)
+       }
+   }
+   return word
+};
