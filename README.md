@@ -354,3 +354,19 @@ var checkIfExist = function(arr) {
     }
     return false
 };
+
+Qn no:136. Single Number
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+Ans:
+public class Solution {
+    public int SingleNumber(int[] nums) {
+       int res=0;
+    foreach(var n in nums){
+        res^=n;
+    }
+
+        return res; 
+    }
+}
