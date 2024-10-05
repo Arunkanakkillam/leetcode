@@ -335,3 +335,22 @@ Ans;
 var convertTemperature = function(celsius) {
     return [celsius+273.15,celsius * 1.80 + 32.00]
 };
+
+
+Qn no:1346. Check If N and Its Double Exist
+Given an array arr of integers, check if there exist two indices i and j such that :
+
+    i != j
+    0 <= i, j < arr.length
+    arr[i] == 2 * arr[j]
+Ans:
+var checkIfExist = function(arr) {
+    for(i=0;i<arr.length;i++){
+        for(j=0;j<arr.length;j++){
+            if(i!=j&&arr[j]==2*arr[i]){
+                return true
+            }
+        }
+    }
+    return false
+};
