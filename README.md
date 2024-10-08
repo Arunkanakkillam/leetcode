@@ -410,3 +410,14 @@ var numJewelsInStones = function(jewels, stones) {
     }
     return count
 };
+
+Qn no: 2621 Sleep
+Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.
+Ans:
+async function sleep(millis) {
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{console.log(millis)
+              res()
+        },millis)
+    })
+}
