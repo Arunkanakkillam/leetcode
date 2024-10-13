@@ -480,3 +480,25 @@ if(a.split('').reverse().join('')!=a){
   }  
   return true
 };
+
+Qn no:283. Move Zeroes
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Note that you must do this in-place without making a copy of the array.
+Ans:
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+    let start = 0;  
+    let current = 0;  
+    while (current < nums.length) {
+        if (nums[current] !== 0) {
+            let temp = nums[start];
+            nums[start] = nums[current];
+            nums[current] = temp;
+            start++;
+        }
+        current++
+    }
+};
