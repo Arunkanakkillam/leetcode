@@ -502,3 +502,24 @@ var moveZeroes = function(nums) {
         current++
     }
 };
+
+Qn no:2520. Count the Digits That Divide a Number
+Given an integer num, return the number of digits in num that divide num.
+An integer val divides nums if nums % val == 0.
+Ans:
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var countDigits = function(num) {
+    let a=num.toString()
+    count=0
+    for(i=0;i<a.length;i++){
+        if(num%a[i]==0){
+             count++
+        }
+           
+    
+    }
+    return count
+};
