@@ -653,3 +653,26 @@ The result format is in the following example.
 Ans:
 select name,population,area from world
 where area>=3000000 or population >=25000000;
+
+Qn No: 197. Rising Temperature
+
+Weather
+
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| recordDate    | date    |
+| temperature   | int     |
++---------------+---------+
+id is the column with unique values for this table.
+There are no different rows with the same recordDate.
+This table contains information about the temperature on a certain day.
+Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).
+Return the result table in any order.The result format is in the following example.
+
+Ans: 
+select w1.id as Id
+from Weather w1
+join Weather w2 on w1.recordDate=DATEADD(day, 1, w2.recordDate)
+where w1.temperature>w2.temperature;
