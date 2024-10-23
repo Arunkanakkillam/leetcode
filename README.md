@@ -723,3 +723,31 @@ ORDER BY salary DESC
 OFFSET 1 ROWS 
 FETCH NEXT 1 ROWS ONLY)
 AS SecondHighestSalary;
+
+
+
+
+QN NO:619. Biggest Single Number
+
+Table: MyNumbers
+
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| num         | int  |
++-------------+------+
+This table may contain duplicates (In other words, there is no primary key for this table in SQL).
+Each row of this table contains an integer.
+
+A single number is a number that appeared only once in the MyNumbers table.
+Find the largest single number. If there is no single number, report null.
+The result format is in the following example.
+
+Ans:
+select (select num from mynumbers
+group by num
+having count(num)=1
+order by num desc
+offset 0 rows
+fetch next 1 rows only)
+as num;
