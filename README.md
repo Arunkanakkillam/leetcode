@@ -973,3 +973,34 @@ Ans:
 select patient_id, patient_name, conditions  
 from Patients
 where conditions like 'DIAB1%' or conditions like '% DIAB1%';
+
+
+Qn no:1045. Customers Who Bought All Products
+Table: Customer
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| customer_id | int     |
+| product_key | int     |
++-------------+---------+
+This table may contain duplicates rows. 
+customer_id is not NULL.
+product_key is a foreign key (reference column) to Product table.
+
+ 
+
+Table: Product
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| product_key | int     |
++-------------+---------+
+product_key is the primary key (column with unique values) for this table.
+
+Ans:select distinct customer_id 
+from customer
+group by customer_id
+having count(distinct product_key )=(select count (distinct product_key)from Product)
+
