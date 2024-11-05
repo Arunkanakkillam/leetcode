@@ -1004,3 +1004,26 @@ from customer
 group by customer_id
 having count(distinct product_key )=(select count (distinct product_key)from Product)
 
+
+Qn no:4. Median of Two Sorted Arrays
+
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+The overall run time complexity should be O(log (m+n)).
+
+Ans:
+public class Solution {
+    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
+        int [] a=nums1.Concat(nums2).ToArray();
+        Array.Sort(a);
+        int n=a.Length;
+        if(n%2==1){
+            return a[n/2];
+        }
+        else{
+            return (a[(n/2)-1]+a[(n/2)])/2.00;
+        }
+
+
+    }
+}
+
