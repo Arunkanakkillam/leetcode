@@ -1121,3 +1121,21 @@ select employee_id
 from Employees
 where salary<30000 and manager_id not in (select employee_id from Employees) 
 order by employee_id asc;
+
+Qn no:1281. Subtract the Product and Sum of Digits of an Integer
+Given an integer number n, return the difference between the product of its digits and the sum of its digits. 
+Ans:
+public class Solution {
+    public int SubtractProductAndSum(int n) {
+     string a=n.ToString();
+     int mul=1;
+     int sum=0;
+     for(int i=0;i<a.Length;i++){
+        int digit = int.Parse(a[i].ToString());
+            mul*=digit;
+            sum+=digit;
+     }
+     return mul-sum;   
+    }
+
+}
