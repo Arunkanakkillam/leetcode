@@ -1239,3 +1239,23 @@ select distinct Register.contest_id, round(count(register.user_id)*cast(100 as f
 from Register
 group by register.contest_id
 order by  percentage desc,Register.contest_id asc ;
+
+
+Qn no:1832. Check if the Sentence Is Pangram
+A pangram is a sentence where every letter of the English alphabet appears at least once.
+
+Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, or false otherwise.
+
+Ans:
+public class Solution {
+    public bool CheckIfPangram(string sentence) {
+        HashSet<char> sent=new HashSet<char>();
+        foreach(var leter in sentence){
+            if(leter>='a' || leter<='z'){
+                sent.Add(leter);
+            }
+        }
+
+        return sent.Count==26;
+    }
+}
