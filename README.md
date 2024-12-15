@@ -1259,3 +1259,29 @@ public class Solution {
         return sent.Count==26;
     }
 }
+
+Qn no:704. Binary Search
+Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+You must write an algorithm with O(log n) runtime complexity.
+
+Ans:
+public class Solution {
+    public int Search(int[] nums, int target) {
+        
+int left=0;
+int right=nums.Length-1;
+while(left<=right){
+    int middle=left+(right-left)/2;
+    if(nums[middle]==target){
+        return middle;
+    }
+    else if(nums[middle]<target){
+        left=middle+1;
+    }
+    else{
+        right=middle-1;
+    }
+}
+return-1;
+    }
+}
