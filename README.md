@@ -1354,3 +1354,17 @@ public class Solution {
         return ans;
     }
 }
+
+Qn no:49. Group Anagrams
+Given an array of strings strs, group the
+anagrams together. You can return the answer in any order.
+
+Ans:
+public class Solution {
+    public IList<IList<string>> GroupAnagrams(string[] strs) {
+
+       return strs.GroupBy(c=>new string(c.OrderBy(b=>b).ToArray()))
+                   .Select(p=>p.ToList() as IList<string>).ToList();
+        
+    }
+}
