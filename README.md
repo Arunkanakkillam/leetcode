@@ -1368,3 +1368,17 @@ public class Solution {
         
     }
 }
+
+Qn no: 414. Third Maximum Number
+Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number.
+ans:
+public class Solution {
+    public int ThirdMax(int[] nums) {
+   var data=nums.Distinct().OrderByDescending(x=>x).
+                    ToList();
+                    if(data.Count()<3){
+                        return data[0];
+                    }
+                    return data[2];
+    }
+}
