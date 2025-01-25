@@ -1382,3 +1382,26 @@ public class Solution {
                     return data[2];
     }
 }
+
+
+Qn no:1089. Duplicate Zeros
+Given a fixed-length integer array arr, duplicate each occurrence of zero, shifting the remaining elements to the right.
+
+Note that elements beyond the length of the original array are not written. Do the above modifications to the input array in place and do not return anything.
+
+Ans:
+public class Solution {
+    public void DuplicateZeros(int[] arr) {
+        var ar=arr.ToList();
+        for(int i=0;i<ar.Count;i++){
+            if(ar[i]==0){
+                ar.Insert(i,0);
+                ar.RemoveAt(ar.Count-1);
+                i++;
+            }
+        }
+        for(int j=0;j<arr.Length;j++){
+            arr[j]=ar[j];
+        }
+    }
+}
