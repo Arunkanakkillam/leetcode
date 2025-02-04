@@ -1528,3 +1528,29 @@ public class Solution {
         return numbers.ToArray();
     }
 }
+
+Qn no:800. Maximum Ascending Subarray Sum
+Given an array of positive integers nums, return the maximum possible sum of an ascending subarray in nums.
+A subarray is defined as a contiguous sequence of numbers in an array.A subarray [numsl, numsl+1, ..., numsr-1, numsr] is ascending if for all i where l <= i < r, numsi  < numsi+1. Note that a subarray of size 1 is ascending.
+
+
+Ans:
+public class Solution {
+    public int MaxAscendingSum(int[] nums) {
+        List<int> list=new List<int>();
+        for(int i=0;i<nums.Length;i++){
+            int sum=nums[i];
+            for(int j=i+1;j<nums.Length;j++){
+                if(nums[j]>nums[j-1]){
+                    sum+=nums[j];
+                }else
+                {
+                     break;
+                }
+               
+            }
+            list.Add(sum);
+        }
+        return list.Max();
+    }
+}
