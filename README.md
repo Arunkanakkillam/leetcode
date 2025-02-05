@@ -1554,3 +1554,26 @@ public class Solution {
         return list.Max();
     }
 }
+
+
+Qn No:1790. Check if One String Swap Can Make Strings Equal
+You are given two strings s1 and s2 of equal length. A string swap is an operation where you choose two indices in a string (not necessarily different) and swap the characters at these indices.
+Return true if it is possible to make both strings equal by performing at most one string swap on exactly one of the strings. Otherwise, return false.
+
+Ans:
+public class Solution {
+    public bool AreAlmostEqual(string s1, string s2) {
+        if (s1 == s2) return true;  
+        List<int> diffIndices = new List<int>();
+
+        for (int i = 0; i < s1.Length; i++) {
+            if (s1[i] != s2[i]) {
+                diffIndices.Add(i);
+                if (diffIndices.Count > 2) return false; 
+            }
+        }
+         if (diffIndices.Count != 2) return false;
+        int i1 = diffIndices[0], i2 = diffIndices[1];
+        return s1[i1] == s2[i2] && s1[i2] == s2[i1];
+    }
+}
