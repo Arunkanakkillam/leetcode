@@ -1577,3 +1577,27 @@ public class Solution {
         return s1[i1] == s2[i2] && s1[i2] == s2[i1];
     }
 }
+qn No:2706. Buy Two Chocolates
+You are given an integer array prices representing the prices of various chocolates in a store. You are also given a single integer money, which represents your initial amount of money.
+You must buy exactly two chocolates in such a way that you still have some non-negative leftover money. You would like to minimize the sum of the prices of the two chocolates you buy.
+Return the amount of money you will have leftover after buying the two chocolates. If there is no way for you to buy two chocolates without ending up in debt, return money. Note that the leftover must be non-negative.
+
+ans:
+public class Solution {
+    public int BuyChoco(int[] prices, int money) {
+         int minCost = int.MaxValue;
+        for(int i=0;i<prices.Length;i++){
+            for(int j=i+1;j<prices.Length;j++){
+                if(prices[i]+prices[j]>money){
+                    continue;
+                }
+               minCost = Math.Min(minCost, prices[i]+prices[j]); 
+            }
+        }
+      if (minCost == int.MaxValue) {
+            return money;
+        } else {
+            return money - minCost;
+        }
+    }
+}
