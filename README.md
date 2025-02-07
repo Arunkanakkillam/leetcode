@@ -1601,3 +1601,30 @@ public class Solution {
         }
     }
 }
+
+
+Qn no:2595. Number of Even and Odd Bits
+You are given a positive integer n.
+Let even denote the number of even indices in the binary representation of n with value 1.
+Let odd denote the number of odd indices in the binary representation of n with value 1.
+Note that bits are indexed from right to left in the binary representation of a number.
+Return the array [even, odd].
+
+Ans:
+public class Solution {
+    public int[] EvenOddBit(int n) {
+       string b = Convert.ToString(n, 2);
+        int even=0;
+        int odd=0;
+        for(int i=0;i<b.Length;i++){
+           int c = b[b.Length - 1 - i] - '0';
+            if(c==1&&i%2==0){
+                even++;
+            }
+            if(c==1&&i%2!=0){
+                odd++;
+            }
+        }
+        return new int[]{even,odd};
+    }
+}
