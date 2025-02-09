@@ -1628,3 +1628,29 @@ public class Solution {
         return new int[]{even,odd};
     }
 }
+
+Qn no:2656. Maximum Sum With Exactly K Elements 
+
+You are given a 0-indexed integer array nums and an integer k. Your task is to perform the following operation exactly k times in order to maximize your score:
+
+Select an element m from nums.
+Remove the selected element m from the array.
+Add a new element with a value of m + 1 to the array.
+Increase your score by m.
+Return the maximum score you can achieve after performing the operation exactly k times.
+
+Ans:
+public class Solution {
+    public int MaximizeSum(int[] nums, int k) {
+        Array.Sort(nums);
+       int sum=nums[nums.Length-1];
+        for (int i = 0;i<k;i++){
+            nums[nums.Length-1]=nums[nums.Length-1]+1;
+            if(i<k-1){
+            sum +=(nums[nums.Length-1]);
+            }
+        }
+        return sum;
+        
+    }
+}
