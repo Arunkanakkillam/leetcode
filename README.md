@@ -1654,3 +1654,32 @@ public class Solution {
         
     }
 }
+
+Qn no:3174. Clear Digits
+You are given a string s.
+
+Your task is to remove all digits by doing this operation repeatedly:
+
+Delete the first digit and the closest non-digit character to its left.
+Return the resulting string after removing all digits.
+Ans:
+public class Solution {
+    public string ClearDigits(string s) {
+        List<char> result = s.ToList(); 
+
+        for (int i = 0; i < result.Count;) {
+            if (int.TryParse(result[i].ToString(), out _)) {
+                result.RemoveAt(i); 
+
+                if (i > 0) { 
+                    result.RemoveAt(i - 1);
+                    i--;
+                }
+            } else {
+                i++; 
+            }
+        }
+
+        return new string(result.ToArray());
+    }
+}
