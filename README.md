@@ -1683,3 +1683,23 @@ public class Solution {
         return new string(result.ToArray());
     }
 }
+
+Qn no:1910. Remove All Occurrences of a Substring
+Given two strings s and part, perform the following operation on s until all occurrences of the substring part are removed:
+
+Find the leftmost occurrence of the substring part and remove it from s.
+Return s after removing all occurrences of part.
+
+A substring is a contiguous sequence of characters in a string.
+
+Ans:
+public class Solution {
+    public string RemoveOccurrences(string s, string part) {
+       
+         while (s.Contains(part)) {
+           s=s.Remove(s.IndexOf(part),part.Length);
+        }
+        return s;
+        
+    }
+}
