@@ -1703,3 +1703,33 @@ public class Solution {
         
     }
 }
+
+Qn no:1980. Find Unique Binary String
+Given an array of strings nums containing n unique binary strings each of length n, return a binary string of length n that does not appear in nums. If there are multiple answers, you may return any of them.
+
+Ans:
+
+public class Solution {
+    public string FindDifferentBinaryString(string[] nums) {
+        int n = nums.Length;
+        Random random = new Random();
+
+        while (true) {
+            string randomBinary = GenerateRandomBinary(n, random);
+            
+            if (!nums.Contains(randomBinary)) {
+                return randomBinary;
+            }
+        }
+    }
+
+    private string GenerateRandomBinary(int length, Random random) {
+        char[] binaryString = new char[length];
+
+        for (int i = 0; i < length; i++) {
+            binaryString[i] = random.Next(2) == 0 ? '0' : '1';
+        }
+
+        return new string(binaryString);
+    }
+}
